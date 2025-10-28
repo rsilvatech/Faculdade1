@@ -20,6 +20,8 @@
     static void LimpaTerminal() {
         #ifdef _WIN32
             system("cls");
+        #elif _WIN64
+            system("cls");
         #else
             system("clear");
         #endif
@@ -65,7 +67,7 @@
 
     //Função para calcular "superpoder" da carta
     float CalcSuperPoder (carta_t *c) {
-        if (c == NULL) {
+        if (c == NULL|| c->superPoder <= 0) {
             return 0.0f;
         } else {
         float superPoder_f = c->populacao + c->area + c->pib + c->pontosTuristicos + CalcPibPerCapita(c) + (1 / CalcDensidadePopulacional(c));
@@ -321,18 +323,17 @@
 
     //Pointer que facilita o acesso aos nomes dos atributos dentro do struct Carta
     static const char *NomeAtributo(int escolha) {
-        while(1) {
-            switch (escolha) {
-                case 1: return "População"; break;
-                case 2: return "Área"; break;
-                case 3: return "PIB"; break;
-                case 4: return "Pontos Turísticos"; break;
-                case 5: return "Densidade Populacional"; break;
-                case 6: return "PIB per Capita"; break;
-                case 7: return "Super Poder"; break;
-                default: return "Atributo Inválido"; break;
-            }
-        }
+        switch (escolha) {
+            case 1: return "População"; break;
+            case 2: return "Área"; break;
+            case 3: return "PIB"; break;
+            case 4: return "Pontos Turísticos"; break;
+            case 5: return "Densidade Populacional"; break;
+            case 6: return "PIB per Capita"; break;
+            case 7: return "Super Poder"; break;
+            default: return "Atributo Inválido"; break;
+         }
+
     }
 
     //Função que inicializa os valores de atributos compostos e facilita a escolha do valor do atributo
@@ -507,7 +508,7 @@
             printf("4. Comparar Todos os Atributos\n");
             printf("5. Voltar para o menu principal");
             printf("5. Exibir Cartas\n");
-            printf("6. Voltar para o menu principal")
+            printf("6. Voltar para o menu principal");
             scanf("%d", &modo);
             if (modo < 1 || modo > 6) {
                 printf("Entrada inválida. Tente novamente\n");
@@ -625,42 +626,54 @@ int main() {
     /*Inicializando a função "rand" (Retorna um número pseudoaleatório)
     dentro de CompAtributoAleatorio (escolhe atributo aleatório para comparar) */
     srand(time(0));
-    rand();
-
 
     //Cadastro da primeira carta: Lê o input do usuário e usa-o para definir os valores do struct carta_t c1
     printf("Cadastro da primeira carta:\n");
     printf("Estado (A-H): ");
     scanf(" %c", &c1.estado);
+    LimpaDataBuffer();
     printf("Código da Carta (ex: A01): ");
     scanf(" %3s", c1.codigo);
+    LimpaDataBuffer();
     printf("Nome da Cidade: ");
     scanf(" %49[^\n]", c1.cidade);
+    LimpaDataBuffer();
     printf("População: ");
     scanf(" %lu", &c1.populacao);
+    LimpaDataBuffer();
     printf("Área (em km²): ");
     scanf(" %f", &c1.area);
+    LimpaDataBuffer();
     printf("PIB (em reais): ");
     scanf(" %f", &c1.pib);
+    LimpaDataBuffer();
     printf("Número de Pontos Turísticos: ");
-    scanf(" %d", &c1.pontosTuristicos);
+    scanf(" %u", &c1.pontosTuristicos);
+    LimpaDataBuffer();
 
      //Cadastro da segunda carta: Lê o input do usuário e usa-o para definir os valores do struct carta_t c2
     printf("\nCadastro da segunda carta :\n");
     printf("Estado (A-H): ");
     scanf(" %c", &c2.estado);
+    LimpaDataBuffer();
     printf("Código da Carta (ex: B02): ");
     scanf(" %3s", c2.codigo);
+    LimpaDataBuffer();
     printf("Nome da Cidade: ");
     scanf(" %49[^\n]", c2.cidade);
+    LimpaDataBuffer();
     printf("População: ");
     scanf(" %lu", &c2.populacao);
+    LimpaDataBuffer();
     printf("Área (em km²): ");
     scanf(" %f", &c2.area);
+    LimpaDataBuffer();
     printf("PIB (em reais): ");
     scanf(" %f", &c2.pib);
+    LimpaDataBuffer();
     printf("Número de Pontos Turísticos: ");
-    scanf(" %d", &c2.pontosTuristicos);
+    scanf(" %u", &c2.pontosTuristicos);
+    LimpaDataBuffer();
 
     //Menu Principal: Exibe a opção de iniciar o jogo, ver as regras ou sair
     MenuPrincipal();
