@@ -1,5 +1,5 @@
 
-construção:
+Construção:
 - Compile no diretório que contém `super_trunfo.c`:
   gcc -std=c11 -Wall -Wextra -o super_trunfo super_trunfo.c
 
