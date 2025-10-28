@@ -2,8 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-
-    /*Chamando funções que serão declaradas e descritas
+    /*Chamando funções que serão declaradas e descritas.
      posteriormente no codigo. Serão usadas principalmente entre menus*/
     void TerminaJogo();
     void MenuPrincipal();
@@ -255,7 +254,6 @@
         }
         TerminaJogo();
     }
-
 
     //Função de escolha do atributo para comparação pelo usuário
     int num;
