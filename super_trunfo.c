@@ -74,7 +74,7 @@
         }
     }
 
-    //Funções de comparação de atributos entre cartas (linhas 59-156)
+    //Funções de comparação de atributos entre cartas (7 funções no total)
     int CompPopulacao(carta_t *c1, carta_t *c2) {
         printf("\nAtributo: População\n");
         if (c1->populacao > c2->populacao) {
@@ -377,7 +377,7 @@
             break;
         }
 
-        //calcula valores dos atributos e passa copias para funções/blocos de códigos posteriores (variáveis double para evitar erros de precisão)
+        //calcula valores dos atributos e passa copias para funções/blocos de códigos posteriores.
         float v1_p = ValorAtributo(&c1, primeiro);
         float v2_p = ValorAtributo(&c2, primeiro);
         float v1_s = ValorAtributo(&c1, segundo);
@@ -389,24 +389,40 @@
 
         //Definindo vencedor por atributo
         if (primeiro == 5) {
-            if (v1_p < v2_p) printf("Vencedor no atributo 1 (%s): Carta 1\n", NomeAtributo(primeiro));
-            else if (v1_p > v2_p) printf("Vencedor no atributo 1 (%s): Carta 2\n", NomeAtributo(primeiro));
-            else printf("Atributo 1 (%s): Empate!\n", NomeAtributo(primeiro));
+            if (v1_p < v2_p) {
+                printf("Vencedor no atributo 1 (%s): Carta 1\n", NomeAtributo(primeiro));
+            } else if (v1_p > v2_p) {
+                printf("Vencedor no atributo 1 (%s): Carta 2\n", NomeAtributo(primeiro));
+            } else { 
+            printf("Atributo 1 (%s): Empate!\n", NomeAtributo(primeiro));
+            }
         } else {
-            if (v1_p > v2_p) printf("Vencedor no atributo 1 (%s): Carta 1\n", NomeAtributo(primeiro));
-            else if (v1_p < v2_p) printf("Vencedor no atributo 1 (%s): Carta 2\n", NomeAtributo(primeiro));
-            else printf("Atributo 1 (%s): Empate!\n", NomeAtributo(primeiro));
+            if (v1_p > v2_p) {
+                printf("Vencedor no atributo 1 (%s): Carta 1\n", NomeAtributo(primeiro));
+            } else if (v1_p < v2_p) {
+                printf("Vencedor no atributo 1 (%s): Carta 2\n", NomeAtributo(primeiro));
+            } else {
+                printf("Atributo 1 (%s): Empate!\n", NomeAtributo(primeiro));
+            }
         }
 
         if (segundo == 5) {
-            if (v1_s < v2_s) printf("Vencedor no atributo 2 (%s): Carta 1\n",NomeAtributo(segundo));
-            else if (v1_s > v2_s) printf("Vencedor no atributo 2 (%s): Carta 2\n", NomeAtributo(segundo));
-            else printf("Atributo 2 (%s): Empate!\n", NomeAtributo(segundo));
+            if (v1_s < v2_s) {
+                printf("Vencedor no atributo 2 (%s): Carta 1\n",NomeAtributo(segundo));
+            } else if (v1_s > v2_s) {
+                printf("Vencedor no atributo 2 (%s): Carta 2\n", NomeAtributo(segundo));
+            } else {
+                printf("Atributo 2 (%s): Empate!\n", NomeAtributo(segundo));
+            }
         } else {
-            if (v1_s > v2_s) printf("Vencedor no atributo 2 (%s): Carta 1\n", NomeAtributo(segundo));
-            else if (v1_s < v2_s) printf("Vencedor no atributo 2 (%s): Carta 2\n", NomeAtributo(segundo));
-            else printf("Atributo 2 (%s): Empate!\n", NomeAtributo(segundo));
+             if (v1_s > v2_s) {
+                 printf("Vencedor no atributo 2 (%s): Carta 1\n", NomeAtributo(segundo));
+            } else if (v1_s < v2_s) { 
+                 printf("Vencedor no atributo 2 (%s): Carta 2\n", NomeAtributo(segundo));
+            } else {
+                printf("Atributo 2 (%s): Empate!\n", NomeAtributo(segundo));
         }
+    }
 
         //Soma e decisão final
         float soma1 = v1_p + v1_s;
