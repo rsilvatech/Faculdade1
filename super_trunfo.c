@@ -520,9 +520,8 @@
             printf("2. Escolha 2 Atributos\n");
             printf("3. Atributo Aleatório\n");
             printf("4. Comparar Todos os Atributos\n");
-            printf("5. Voltar para o menu principal");
             printf("5. Exibir Cartas\n");
-            printf("6. Voltar para o menu principal");
+            printf("6. Voltar para o menu principal\n");
             scanf("%d", &modo);
             if (modo < 1 || modo > 6) {
                 printf("Entrada inválida. Tente novamente\n");
