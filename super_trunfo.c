@@ -3,7 +3,7 @@
 #include <time.h>
 
     /*Chamando funções que serão declaradas e descritas.
-     posteriormente no codigo. Serão usadas principalmente entre menus*/
+     posteriormente no codigo. Serão usadas principalmente entre menus.*/
     void TerminaJogo();
     void MenuPrincipal();
     void RetornaMenuInicioJogo();
