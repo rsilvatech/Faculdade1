@@ -22,12 +22,13 @@ void moverBispoRecursivo(int casasRestantes) {
 }
 
 // Função com loops aninhados para simular o movimento diagonal do Bispo
-void moverBispoComLoops(int movimentosVerticais, int movimentosHorizontais) {
+void moverBispoComLoops(int movimentosVerticais, int movimentosHorizontais, int iteracoesTotal) {
     for (int i = 0; i < movimentosVerticais; i++) {
-        for (int j = 0; j < movimentosHorizontais; j++) {
+        for (int j = 0; j < movimentosHorizontais && iteracoesTotal < 5; j++) {
             // Simula uma casa diagonal como combinação de vertical e horizontal
             printf("Cima Direita\n");
-        }
+            iteracoesTotal++;
+;        }
     }
 }
 
@@ -54,7 +55,6 @@ void moverCavalo() {
 }
 
 int main() {
-
     // Movimento da Torre com recursividade
     int casasTorre = 5;
     printf("Movimento da Torre:\n");
@@ -66,9 +66,11 @@ int main() {
     moverBispoRecursivo(casasBispo);
 
     // Movimento do Bispo com loops aninhados
+    int iteracoesTotal = 0;
     printf("\nMovimento do Bispo (Loops Aninhados):\n");
-    moverBispoComLoops(2, 3); // Exemplo: 2 verticais × 3 horizontais = 6 movimentos diagonais
-
+    moverBispoComLoops(2, 3, iteracoesTotal); // Exemplo: 2 verticais × 3 horizontais = 6 movimentos diagonais, mas como "iteracoesTotal < 5" somente teremos 5 movimentos
+                                            
+    
     // Movimento da Rainha com recursividade
     int casasRainha = 8;
     printf("\nMovimento da Rainha:\n");
