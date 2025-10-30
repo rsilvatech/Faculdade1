@@ -54,6 +54,7 @@ void moverCavalo() {
 }
 
 int main() {
+
     // Movimento da Torre com recursividade
     int casasTorre = 5;
     printf("Movimento da Torre:\n");
