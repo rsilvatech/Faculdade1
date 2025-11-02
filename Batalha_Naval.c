@@ -155,7 +155,7 @@ int main() {
         return 1;
     }
 
-    // Verifica se o navio diagonal 1 cabe no tabuleiro
+    // Verifica se o navio diagonal 1 cabe no tabuleiro 
     if (linhaNavioDiagonal1 + TamNavio <= TamTabuleiro) {
         // Verifica se há sobreposição com o navio diagonal 1
         int sobreposicao = 0;
