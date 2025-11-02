@@ -18,4 +18,5 @@ Controles e entrada:
   - Área, PIB: float
   - Pontos turísticos: unsigned int
 
+
 Licença: uso pessoal / educativo.
