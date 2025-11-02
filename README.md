@@ -1,3 +1,4 @@
+INSTRUÇÔES (SUPER TRUNFO)
 
 Construção:
 - Compile no diretório que contém `super_trunfo.c`:
